@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro Festival La Teste</title>
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #a0f4ff;
+            color: #000;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        header nav {
+            margin-top: 10px;
+        }
+
+        header nav a {
+            color: #ff70e5;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .date-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .date-section div {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .poster img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .description {
+            margin: 20px auto;
+            max-width: 800px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #ff70e5;
+            font-weight: bold;
+        }
+
+        .artists {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .artist-card {
+            background-color: #fff;
+            border: 2px solid #ff70e5;
+            border-radius: 10px;
+            padding: 15px;
+            max-width: 300px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .artist-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .artist-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .cta-section {
+            margin: 40px auto;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .cta-section button {
+            background-color: #ff70e5;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 20px;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-section button:hover {
+            background-color: #fff;
+            color: #ff70e5;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer .contact {
+            font-size: 14px;
+        }
+
+        footer .social-icons {
+            margin-top: 10px;
+        }
+
+        footer .social-icons img {
+            width: 24px;
+            height: 24px;
+            margin: 0 5px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .artists {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .artist-card {
+                max-width: 90%;
+            }
+
+            .cta-section button {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Electro Festival La Teste</h1>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Éditions</a>
+            <a href="#">Infos</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="date-section">
+            <div>DU<br><span class="highlight">15/06/25</span></div>
+            <div>AU<br><span class="highlight">17/06/25</span></div>
+        </section>
+
+        <section class="poster">
+            <img src="images/festival-techno-la-teste.jpg" alt="Affiche du festival">
+        </section>
+
+        <section class="description">
+            <p>Bienvenue à l’<span class="highlight">Electro Festival La Teste</span> ! Cette édition vous réserve une expérience musicale unique avec des artistes talentueux, prêts à faire vibrer vos sens jusqu’au bout de la nuit. Préparez-vous à vivre une aventure musicale mémorable !</p>
+        </section>
+
+        <section class="artists">
+            <div class="artist-card">
+                <img src="images/groupe-imperatrice.jpg" alt="L'impératrice">
+                <p><strong>L'impératrice</strong> est un groupe français aux influences disco et pop.</p>
+            </div>
+            <div class="artist-card">
+                <img src="images/kavinsky-face.jpg" alt="Kavinsky">
+                <p><strong>Kavinsky</strong> célèbre pour ses sons rétro et électro, est un incontournable de la musique synthwave.</p>
+            </div>
+            <div class="artist-card">
+                <img src="images/m83-groupe.jpg" alt="M83">
+                <p><strong>M83</strong> vous plonge dans un univers sonore mélangeant synthétiseurs et sons atmosphériques.</p>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <p>Ne manquez pas l’opportunité de vivre cette expérience unique. Réservez votre place dès maintenant !</p>
+            <button>DISPONIBILITÉS</button>
+        </section>
+    </main>
+
+    <footer>
+        <p class="contact">festival_teste@gmail.com | 05.55.55.55.55</p>
+        <div class="social-icons">
+            <img src="icon-facebook.png" alt="Facebook">
+            <img src="icon-instagram.png" alt="Instagram">
+        </div>
+    </footer>
+
+    <script>
+        // Animation pour le bouton de disponibilité
+        const ctaButton = document.querySelector('.cta-section button');
+        ctaButton.addEventListener('mouseover', () => {
+            ctaButton.style.transform = 'scale(1.1)';
+        });
+        ctaButton.addEventListener('mouseout', () => {
+            ctaButton.style.transform = 'scale(1)';
+        });
+
+        // Animation pour les cartes d'artistes
+        const artistCards = document.querySelectorAll('.artist-card');
+        artistCards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.style.boxShadow = '0 10px 15px rgba(0, 0, 0, 0.2)';
+                card.style.transform = 'translateY(-5px)';
+            });
+            card.addEventListener('mouseout', () => {
+                card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
