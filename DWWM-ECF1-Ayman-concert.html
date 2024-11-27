@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concerts</title>
+  <link rel="stylesheet" href="css/DWWM-ECF1-Ayman.min.css">
+</head>
+<body>
+
+    <header>
+        <img class="header_banniere-festival" src="images/festival-techno-la-teste-banniere.jpg" alt="banniere-festival">
+    </header> 
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="DWWM-ECF1-Ayman-accueil.html">Accueil</a></li>
+            <li><a href="DWWM-ECF1-Ayman-concert.html">Concerts</a></li>
+            <li><a href="DWWM-ECF1-Ayman-services.html">Services</a></li>
+        </ul>
+    </nav>
+  <div class="container">
+    <!-- Filtre de date -->
+    <div class="filter">
+      <label for="dateFilter"></label>
+      <select id="dateFilter">
+        <option value="all">Toutes les dates</option>
+        <option value="2025-06-15">15 Juin 2025</option>
+        <option value="2025-06-16">16 Juin 2025</option>
+        <option value="2025-06-17">17 Juin 2025</option>
+      </select>
+    </div>
+
+    <!-- Conteneur des cartes -->
+    <div id="concertsContainer" class="concerts-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+
+
+
+  
+  <footer>
+    <p class="contact">festival_lateste@gmail.com | 05.55.55.55.55</p>
+    <div class="social-icons">
+        <img src="images/favicon.png" alt="Facebook">
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,336 @@
+/* Réinitialisation des marges et padding pour tout le document */
+header{
+
+    display: flex;
+    justify-content: center;
+    background-color: #2e2a39;
+    
+    .header_banniere-festival{
+
+        width: 60%;
+    }
+
+   
+}
+
+.navbar {
+    background-color: #2e2a39da;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar li {
+    padding: 14px 20px;
+    background-color: #fd55b7;
+    margin: 5px;
+}
+
+.navbar a {
+    color: #e8ffff;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+}
+
+.navbar a:hover {
+    background-color: #83feff;
+    color: #fd55b7;
+}
+
+
+
+/* Style général du body */
+
+
+/* Conteneur principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section du filtre */
+.filter {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#dateFilter {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #fd55b7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 250px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#dateFilter:hover {
+    background-color: #e83f9e;
+}
+
+/* Conteneur des cartes */
+.concerts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Cartes de concert */
+.card {
+    background-color: white;
+    width: 300px;
+    margin: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image dans les cartes */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Corps de la carte */
+.card-body {
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #fff;
+}
+
+/* Titre du concert */
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #2e2a39;
+    font-weight: bold;
+}
+
+/* Description du concert */
+.card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    height: 60px;
+    overflow: hidden;
+}
+
+/* Footer de la carte */
+.card-footer {
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Texte pour sold out */
+.sold-out {
+    color: #ff4444;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Bouton "Acheter" */
+.buy-btn {
+    background-color: #fd55b7;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buy-btn:hover {
+    background-color: #e83f9e;
+    transform: translateY(-3px);
+}
+
+/* Barre de progression */
+.progress-bar-container {
+    position: relative;
+    background-color: #e8ffff;
+    border-radius: 5px;
+    height: 10px;
+    margin: 15px 0;
+}
+
+.progress-bar {
+    background-color: #83feff;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.progress-text {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Styles pour les cartes "Sold Out" */
+.card.sold-out {
+    opacity: 0.6;
+    border: 3px solid #ff4444;
+}
+
+.card.sold-out .card-body {
+    opacity: 0.5;
+}
+
+.card.sold-out img {
+    opacity: 0.4;
+}
+
+/* Effet de survol des cartes */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #dateFilter {
+        width: 220px;
+    }
+
+    .concerts-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .card-body h3 {
+        font-size: 18px;
+    }
+
+    .card-body p {
+        font-size: 13px;
+    }
+
+    .buy-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+    .filter {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    #dateFilter {
+        width: 100%;
+    }
+
+    .card-body h3 {
+        font-size: 16px;
+    }
+
+    .card-body p {
+        font-size: 12px;
+    }
+
+    .buy-btn {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    .progress-text {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .concerts-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card-body h3 {
+        font-size: 14px;
+    }
+
+    .card-body p {
+        font-size: 11px;
+    }
+
+    .buy-btn {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .price {
+        font-size: 12px;
+    }
+
+    .progress-text {
+        font-size: 8px;
+    }
+}
+
+footer {
+    background-color: #2e2a39;
+    color: #e8ffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  footer .contact {
+    font-size: 15px;
+  }
+  
+  footer .social-icons {
+    margin-top: 10px;
+  }
+  
+  footer .social-icons img {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+  }

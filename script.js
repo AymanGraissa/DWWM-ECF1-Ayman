@@ -1,19 +1,4 @@
-const audioPlayer = document.getElementById("audioPlayer");
-      const playButton = document.getElementById("playButton");
-
-      // Toggle play/pause when the button is clicked
-      playButton.addEventListener("click", function () {
-        if (audioPlayer.paused) {
-          audioPlayer.play();
-          playButton.textContent = "⬛"; // Change button text to "Pause"
-        } else {
-          audioPlayer.pause();
-          playButton.textContent = "▶"; // Change button text to "Play"
-        }
-      });
-
-
-      // Récupérer le conteneur pour les concerts
+// Récupérer le conteneur pour les concerts
 const concertsContainer = document.getElementById('concertsContainer');
 
 // Fonction pour afficher les concerts
@@ -86,5 +71,3 @@ window.onload = () => {
     filterConcertsByDate(event.target.value); // Filtrer selon la date choisie
   });
 };
-
-      

@@ -1,0 +1,65 @@
+[
+  {
+    "artist": "L'impératrice",
+    "price": 38,
+    "date": "2025-06-15",
+    "time": "19:00",
+    "ticketsSold": 999,
+    "description": "L'impératrice est un groupe français aux influences disco, pop et funk...",
+    "image": "./images/groupe-imperatrice.jpg"
+
+
+},
+{
+    "artist": "Kavinsky",
+    "price": 45,
+    "date": "2025-06-15",
+    "time": "21:30",
+    "ticketsSold": 1000,
+    "description": "Kavinsky, connu pour son hit 'Nightcall', est un artiste français...",
+    "image": "./images/kavinsky-face.jpg"
+
+
+},
+{
+    "artist": "M83",
+    "price": 32,
+    "date": "2025-06-16",
+    "time": "19:00",
+    "ticketsSold": 600,
+    "description": "M83, dirigé par Anthony Gonzalez, est un projet de musique électronique français...",
+    "image": "./images/m83-groupe.jpg"
+
+},
+{
+    "artist": "Wax Taylor",
+    "price": 29,
+    "date": "2025-06-16",
+    "time": "22:00",
+    "ticketsSold": 350,
+    "description": "Wax Taylor est un producteur français de trip-hop et de hip-hop...",
+    "image": "./images/wax-taylor.jpg"
+
+},
+{
+    "artist": "Bonobo",
+    "price": 50,
+    "date": "2025-06-17",
+    "time": "20:30",
+    "ticketsSold": 780,
+    "description": "Bonobo, alias Simon Green, est un artiste britannique de musique électronique...",
+    "image": "./images/bonobo.jpg"
+
+},
+{
+    "artist": "Chinese Man",
+    "price": 27,
+    "date": "2025-06-17",
+    "time": "22:00",
+    "ticketsSold": 640,
+    "description": "Chinese Man est un collectif de producteurs français de musique électro...",
+    "image": "./images/chinese-man.jpg"
+
+}
+  ]
+   
