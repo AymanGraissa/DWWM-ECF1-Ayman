@@ -1,87 +1,94 @@
-// Définition des variables de couleurs
-$primary-color: #fd55b7;
-$secondary-color: #83feff;
-$background-color: #e8ffff;
-$dark-color: #2e2a39;
-$accent-color: #ff70e5;
-$button-hover-color: #e83f9e;
-$equalizer-color: #15acff;
-$reverse-equalizer-color: #eb15ff;
-$buy-btn-hover-color: #83feff;
-
-// Corps de la page
 body {
-  background-color: $background-color;
+  background-color: #2e2a39;
 }
 
-// En-tête
 header {
   display: flex;
   justify-content: center;
-  background-color: $dark-color;
+  background-color: #2e2a39;
 
   .header_banniere-festival {
     width: 60%;
   }
 }
 
-// Barre de navigation
+/* Style de base */
 .navbar {
-  background-color: rgba($dark-color, 0.85);
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #333;
+  border-style: solid;
+  border-color: #e83f9e;
+  position: sticky;
+}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  li {
-    padding: 14px 20px;
-    background-color: $primary-color;
-    margin: 5px;
-  }
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
 
   a {
-    color: $background-color;
-    text-align: center;
+    background-color: #e83f9e;
+    border-radius: 5px;
     text-decoration: none;
-    display: flex;
-
-    &:hover {
-      background-color: $secondary-color;
-      color: $primary-color;
-    }
+    color: #e8ffff;
+    font-size: 25px;
   }
 }
 
-// Titres
-h1, h3, h4 {
+/* Cacher le menu burger par défaut */
+.burger-menu {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Media query pour mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Cacher les liens par défaut */
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+
+    a {
+      padding: 10px;
+      color: white;
+    }
+  }
+
+  .burger-menu {
+    display: block; /* Montrer le bouton burger */
+  }
+
+  .nav-links.show {
+    display: flex; /* Montrer les liens lorsqu'on ouvre le menu */
+  }
+}
+
+h1 {
+  color: #e8ffff;
   text-align: center;
   margin: 50px;
 }
 
-h3 {
-  color: $primary-color;
-}
-
-h4 {
-  color: $dark-color;
-}
-
-// Section de présentation 1
 .presentation1 {
   display: flex;
   justify-content: center;
 }
 
-// Affiche concert
 .affiche-concert {
   display: flex;
   flex-direction: column;
-  background-color: $secondary-color;
+  background-color: #83feff;
   width: 80%;
   align-items: center;
   border-radius: 20px;
@@ -104,64 +111,77 @@ h4 {
 
 .player-container {
   text-align: center;
-}
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+  #playButton {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #e83f9e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 
-  &:hover {
-    background-color: #2980b9;
+    &:hover {
+      background-color: #e83f9fb5;
+    }
+  }
+
+  audio {
+    margin-top: 20px;
   }
 }
 
-audio {
-  margin-top: 20px;
-}
-
-// Equalizer
-.equalizer, .reverse-equalizer {
-  display: none;
-  display: flex;
+.music-bars {
+  display: none; /* Caché par défaut */
+  justify-content: center;
   align-items: flex-end;
-  gap: 7px;
-  height: 80px;
-  width: 50%;
-  margin: 0 auto;
+  gap: 10px;
+  height: 100px;
+  width: 200px;
+  margin: 20px auto;
 
   .bar {
     width: 10px;
-    background-color: $equalizer-color;
+    height: 20px;
+    background-color: #e83f9e;
     animation: bounce 1s infinite ease-in-out;
-  }
 
-  &.reverse-equalizer {
-    align-items: flex-start;
-    
-    .bar {
-      background-color: $reverse-equalizer-color;
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    &:nth-child(5) {
+      animation-delay: 0.6s;
     }
   }
 }
 
+/* Animation rebond */
 @keyframes bounce {
   0%, 100% {
-    height: 20%;
+    height: 20px;
   }
   50% {
-    height: 100%;
+    height: 100px;
   }
 }
 
-// Accueil
 .accueil {
   display: flex;
-  background-color: $secondary-color;
+  background-color: #83feff;
   border-radius: 20px;
   margin: 30px;
 
@@ -172,7 +192,13 @@ audio {
   }
 }
 
-// Cards des artistes
+h3 {
+  text-align: center;
+  margin: 100px;
+  font-size: x-large;
+  color: #fd55b7;
+}
+
 .artists {
   display: flex;
   flex-wrap: wrap;
@@ -182,7 +208,7 @@ audio {
 
 .artist-card {
   background-color: #fff;
-  border: 2px solid $accent-color;
+  border: 2px solid #ff70e5;
   border-radius: 10px;
   padding: 15px;
   max-width: 300px;
@@ -202,47 +228,61 @@ audio {
   }
 }
 
-// Button d'accueil
+h4 {
+  text-align: center;
+  margin: 100px;
+  font-size: x-large;
+  color: #83feff;
+}
+
 .dispo-accueil {
-  color: $background-color;
-  background-color: $primary-color;
+  color: #e8ffff;
+  background-color: #fd55b7;
   width: 20%;
   font-size: large;
   border-radius: 20px;
   align-self: center;
 }
 
-// Section CTA
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
 .cta-section {
   margin: 40px auto;
   text-align: center;
   max-width: 800px;
+}
 
-  .cta-section_button {
-    background-color: $accent-color;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    padding: 15px 30px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s, transform 0.3s;
+.cta-section_button {
+  background-color: #ff70e5;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.3s;
 
-    &:hover {
-      background-color: #fff;
-      color: $accent-color;
-      transform: scale(1.05);
-    }
+  &:hover {
+    background-color: #fff;
+    color: #ff70e5;
+    transform: scale(1.05);
   }
 }
 
-// Footer
 footer {
-  background-color: $dark-color;
-  color: $background-color;
+  background-color: #2e2a39;
+  color: #e8ffff;
+  border-color: #e83f9e;
+  border-style: solid;
   text-align: center;
-  padding: 20px;
+  width: 100%;
   margin-top: 40px;
 
   .contact {
@@ -260,9 +300,8 @@ footer {
   }
 }
 
-// Card "Acheter"
 button.buy-btn {
-  background-color: $primary-color;
+  background-color: #fd55b7;
   color: #fff;
   border: none;
   padding: 10px;
@@ -272,19 +311,19 @@ button.buy-btn {
   margin-top: 10px;
 
   &:hover {
-    background-color: $secondary-color;
-    color: $dark-color;
+    background-color: #83feff;
+    color: #2e2a39;
   }
 }
 
-// Container principal
+/* Conteneur principal */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-// Filtre de date
+/* Section du filtre */
 .filter {
   margin-bottom: 30px;
   display: flex;
@@ -293,7 +332,7 @@ button.buy-btn {
   #dateFilter {
     padding: 12px 20px;
     font-size: 16px;
-    background-color: $primary-color;
+    background-color: #fd55b7;
     color: white;
     border: none;
     border-radius: 8px;
@@ -309,7 +348,7 @@ button.buy-btn {
   }
 }
 
-// Cartes de concert
+/* Conteneur des cartes */
 .concerts-container {
   display: flex;
   flex-wrap: wrap;
@@ -318,6 +357,7 @@ button.buy-btn {
   margin-top: 20px;
 }
 
+/* Cartes de concert */
 .card {
   background-color: white;
   width: 300px;
@@ -345,22 +385,22 @@ button.buy-btn {
     padding: 20px;
     flex-grow: 1;
     background-color: #fff;
-  }
 
-  h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: $dark-color;
-    font-weight: bold;
-  }
+    h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #2e2a39;
+      font-weight: bold;
+    }
 
-  p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 15px;
-    line-height: 1.5;
-    height: 60px;
-    overflow: hidden;
+    p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+      line-height: 1.5;
+      height: 60px;
+      overflow: hidden;
+    }
   }
 
   .card-footer {
@@ -384,4 +424,324 @@ button.buy-btn {
     }
   }
 }
+
+/* Texte pour sold out */
+.sold-out {
+  color: #ff4444;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Bouton "Acheter" */
+.buy-btn {
+  background-color: #fd55b7;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: #e83f9e;
+    transform: translateY(-3px);
+  }
+}
+
+/* Barre de progression */
+.progress-bar-container {
+  position: relative;
+  background-color: #e8ffff;
+  border-radius: 5px;
+  height: 10px;
+  margin: 15px 0;
+
+  .progress-bar {
+    background-color: #83feff;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .progress-text {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #dateFilter {
+    width: 220px;
+  }
+
+  .concerts-container {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .card-body h3 {
+    font-size: 18px;
+  }
+
+  .card-body p {
+    font-size: 13px;
+  }
+
+  .buy-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+  .filter {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  #dateFilter {
+    width: 100%;
+  }
+
+  .card-body h3 {
+    font-size: 16px;
+  }
+
+  .card-body p {
+    font-size: 12px;
+  }
+
+  .buy-btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .progress-text {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .concerts-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card-body h3 {
+    font-size: 14px;
+  }
+
+  .card-body p {
+    font-size: 11px;
+  }
+
+  .buy-btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .price {
+    font-size: 12px;
+  }
+
+  .progress-text {
+    font-size: 8px;
+  }
+}
+
+.presentation-concerts {
+  text-align: center;
+  margin: 100px;
+  font-size: xx-large;
+}
+
+.presentation-info {
+  text-align: center;
+  color: #fd55b7;
+  font-size: 180%;
+  margin-top: 100px;
+}
+
+.localisation {
+  margin: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .localisation_iframe {
+    display: flex;
+    align-self: center;
+    width: 70%;
+    height: 300px;
+    border: 10px solid #ffffff;
+    box-shadow: 0px 4px 16px rgba(114, 21, 190, 0.5);
+    border-radius: 16px;
+  }
+
+  .localisation_text {
+    color: #e8ffff;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+  }
+}
+
+.intro {
+  background: #b3f0ff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .menu_item {
+    background: #e8faff;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #15acff;
+    animation: slideIn 1s ease-in-out;
+
+    h2 {
+      color: #15acff;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+/* Animation des menus */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Conteneur des cartes */
+.cardsMenu-container {
+  display: flex;
+  background-color: #83ffff4a;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  margin: 30px;
+}
+
+/* Style des cartes */
+.cardMenu {
+  background-color: #e8faff;
+  border-radius: 50px;
+  border: solid 2px #2e2a39;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 1s ease-in-out;
+
+  h2 {
+    color: #15acff;
+    margin: 10px 0;
+    padding: 0 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0 20px;
+    margin: 0 0 20px 0;
+
+    li {
+      margin-bottom: 10px;
+      color: #2e2a39;
+    }
+  }
+
+  p {
+    margin: 5px 20px;
+    font-weight: bold;
+    color: red;
+  }
+
+  .cardMenu_image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Animation de l'apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.phrase-presentation-menu {
+  text-align: center;
+  margin: 20px;
+  font-size: xx-large;
+  background-color: #83feff;
+  border-radius: 20px;
+  color: #2e2a39;
+}
+
+
+
 

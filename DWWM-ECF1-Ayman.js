@@ -1,5 +1,7 @@
 const audioPlayer = document.getElementById("audioPlayer");
-      const playButton = document.getElementById("playButton");
+const playButton = document.getElementById("playButton");
+const musicBars = document.getElementById('musicBars');
+
 
       // Toggle play/pause when the button is clicked
       playButton.addEventListener("click", function () {
@@ -11,6 +13,21 @@ const audioPlayer = document.getElementById("audioPlayer");
           playButton.textContent = "▶"; // Change button text to "Play"
         }
       });
+
+
+// Ajouter un écouteur d'événement au bouton
+playButton.addEventListener('click', () => {
+  // Si les barres sont cachées, on les affiche et démarre l'animation
+  if (musicBars.style.display === 'none' || musicBars.style.display === '') {
+    musicBars.style.display = 'flex';
+    playButton.textContent = '⏸'; // Change le texte du bouton pour pause
+  } else {
+    // Sinon, on les cache pour arrêter l'animation
+    musicBars.style.display = 'none';
+    playButton.textContent = '▶'; // Change le texte pour lecture
+  }
+});
+
 
 
       // Récupérer le conteneur pour les concerts
@@ -86,5 +103,20 @@ window.onload = () => {
     filterConcertsByDate(event.target.value); // Filtrer selon la date choisie
   });
 };
+
+// Sélectionner les éléments du DOM
+const burgerMenu = document.getElementById('burgerMenu');
+const navLinks = document.getElementById('navLinks');
+
+// Ajouter un événement au clic du menu burger
+burgerMenu.addEventListener('click', () => {
+  navLinks.classList.toggle('show'); // Afficher ou cacher les liens
+});
+
+// Réinitialiser le menu burger lorsque la page se charge
+window.addEventListener('load', () => {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.remove('show'); // Supprimer la classe 'show' pour fermer le menu
+});
 
       

@@ -1,6 +1,6 @@
 body{
 
-    background-color: #e8ffff;
+    background-color: #2e2a39;
 }
 
 header{
@@ -17,38 +17,71 @@ header{
    
 }
 
+/* Style de base */
 .navbar {
-    background-color: #2e2a39da;
-    overflow: hidden;
-}
-
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    justify-content: space-evenly;
-}
-
-.navbar li {
-    padding: 14px 20px;
-    background-color: #fd55b7;
-    margin: 5px;
-}
-
-.navbar a {
-    color: #e8ffff;
-    text-align: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #333;
+    border-style: solid;
+    border-color: #e83f9e;
+    position: sticky;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+  .nav-links a {
+    background-color: #e83f9e;
+    border-radius: 5px;
     text-decoration: none;
-    display: flex;
-}
-
-.navbar a:hover {
-    background-color: #83feff;
-    color: #fd55b7;
-}
+    color: #e8ffff;
+    font-size: 25px;
+  }
+  
+  /* Cacher le menu burger par défaut */
+  .burger-menu {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Media query pour mobile */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none; /* Cacher les liens par défaut */
+      flex-direction: column;
+      background-color: #333;
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      width: 200px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      padding: 10px;
+    }
+  
+    .nav-links a {
+      padding: 10px;
+      color: white;
+    }
+  
+    .burger-menu {
+      display: block; /* Montrer le bouton burger */
+    }
+  
+    .nav-links.show {
+      display: flex; /* Montrer les liens lorsqu'on ouvre le menu */
+    }
+  }
+  
 
 h1{
+    color: #e8ffff;
     text-align: center;
     margin: 50px;
 }
@@ -90,126 +123,65 @@ justify-content: center;
   .player-container {
     text-align: center;
   }
-  button {
+  #playButton {
+    margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #3498db;
+    background-color: #e83f9e;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
   }
-  button:hover {
-    background-color: #2980b9;
+  #playButton:hover {
+    background-color: #e83f9fb5;
   }
   audio {
     margin-top: 20px;
   }
 
-  .equalizer {
-    display: none;
-    display: flex;
+  .music-bars {
+    display: none; /* Caché par défaut */
+    justify-content: center;
     align-items: flex-end;
-    gap: 7px;
-    height: 80px;
-    width: 50%;
-    margin: 0 auto;
+    gap: 10px;
+    height: 100px;
+    width: 200px;
+    margin: 20px auto;
   }
-  .reverse-equalizer {
-    display: flex;
-    align-items: flex-start;
-    gap: 7px;
-    height: 80px;
-    width: 50%;
-    margin: 0 auto;
-  }
-
+  
   .bar {
     width: 10px;
-    background-color: #15acff;
+    height: 20px;
+    background-color: #e83f9e;
     animation: bounce 1s infinite ease-in-out;
   }
-
-  .reverse-equalizer .bar {
-    width: 10px;
-    background-color: #eb15ff;
-    animation: bounce 1s infinite ease-in-out;
-  }
-
-  /* Animation pour les barres */
-  @keyframes bounce {
-    0%,
-    100% {
-      height: 20%;
-    }
-    50% {
-      height: 100%;
-    }
-  }
-
-  .equalizer .bar:nth-child(1),
-  .reverse-equalizer .bar:nth-child(1),
-  .equalizer .bar:nth-child(6),
-  .reverse-equalizer .bar:nth-child(6),
-  .equalizer .bar:nth-child(11),
-  .reverse-equalizer .bar:nth-child(11),
-  .equalizer .bar:nth-child(16),
-  .reverse-equalizer .bar:nth-child(16),
-  .equalizer .bar:nth-child(21),
-  .reverse-equalizer .bar:nth-child(21) {
+  
+  /* Définir des animations décalées pour chaque barre */
+  .bar:nth-child(1) {
     animation-delay: 0s;
   }
-
-  .equalizer .bar:nth-child(3),
-  .reverse-equalizer .bar:nth-child(3),
-  .equalizer .bar:nth-child(8),
-  .reverse-equalizer .bar:nth-child(8),
-  .equalizer .bar:nth-child(13),
-  .reverse-equalizer .bar:nth-child(13),
-  .equalizer .bar:nth-child(18),
-  .reverse-equalizer .bar:nth-child(18),
-  .equalizer .bar:nth-child(23),
-  .reverse-equalizer .bar:nth-child(23) {
-    animation-delay: 0.4s;
+  .bar:nth-child(2) {
+    animation-delay: 0.1s;
   }
-
-  .equalizer .bar:nth-child(7),
-  .reverse-equalizer .bar:nth-child(7),
-  .equalizer .bar:nth-child(12),
-  .reverse-equalizer .bar:nth-child(12),
-  .equalizer .bar:nth-child(2),
-  .reverse-equalizer .bar:nth-child(2),
-  .equalizer .bar:nth-child(17),
-  .reverse-equalizer .bar:nth-child(17),
-  .equalizer .bar:nth-child(22),
-  .reverse-equalizer .bar:nth-child(22) {
+  .bar:nth-child(3) {
     animation-delay: 0.2s;
   }
-
-  .equalizer .bar:nth-child(15),
-  .reverse-equalizer .bar:nth-child(15),
-  .equalizer .bar:nth-child(5),
-  .reverse-equalizer .bar:nth-child(5),
-  .equalizer .bar:nth-child(20),
-  .reverse-equalizer .bar:nth-child(20),
-  .equalizer .bar:nth-child(25),
-  .reverse-equalizer .bar:nth-child(25),
-  .equalizer .bar:nth-child(10),
-  .reverse-equalizer .bar:nth-child(10) {
-    animation-delay: 0.3s;
+  .bar:nth-child(4) {
+    animation-delay: 0.4s;
   }
-
-  .equalizer .bar:nth-child(19),
-  .reverse-equalizer .bar:nth-child(19),
-  .equalizer .bar:nth-child(14),
-  .reverse-equalizer .bar:nth-child(14),
-  .equalizer .bar:nth-child(24),
-  .reverse-equalizer .bar:nth-child(24),
-  .equalizer .bar:nth-child(4),
-  .reverse-equalizer .bar:nth-child(4),
-  .equalizer .bar:nth-child(9),
-  .reverse-equalizer .bar:nth-child(9) {
-    animation-delay: 0.1s;
+  .bar:nth-child(5) {
+    animation-delay: 0.6s;
+  }
+  
+  /* Animation rebond */
+  @keyframes bounce {
+    0%, 100% {
+      height: 20px;
+    }
+    50% {
+      height: 100px;
+    }
   }
 
 .accueil{
@@ -226,6 +198,7 @@ justify-content: center;
         text-align: center;
     }
   }
+
 
 
 h3{
@@ -270,7 +243,7 @@ h4{
     text-align: center;
     margin: 100px;
     font-size: x-large;
-    color: #2e2a39 ;
+    color: #83feff ;
 
 }
 
@@ -319,8 +292,10 @@ h4{
 footer {
   background-color: #2e2a39;
   color: #e8ffff;
+  border-color: #e83f9e;
+  border-style: solid;
   text-align: center;
-  padding: 20px;
+  width: 100%;
   margin-top: 40px;
 }
 
@@ -618,6 +593,194 @@ button.buy-btn:hover {
         font-size: 8px;
     }
 }
+
+.presentation-concerts{
+
+    text-align: center;
+    margin: 100px;
+    font-size: xx-large;
+
+
+}
+
+.presentation-info{
+
+    text-align: center;
+    color: #fd55b7;
+    font-size: 180%;
+    margin-top: 100px;
+}
+
+.localisation{
+
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.localisation_iframe {
+    display: flex;
+    align-self: center;
+    width: 70%;
+    height: 300px;
+    border: 10px solid #ffffff;
+    box-shadow: 0px 4px 16px rgba(114, 21, 190, 0.5);
+    border-radius: 16px;
+  }
+
+.localisation_text{
+
+    color: #e8ffff;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+
+}
+
+.intro {
+    background: #b3f0ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Menu */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .menu_item {
+    background: #e8faff;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #15acff;
+    animation: slideIn 1s ease-in-out;
+  }
+  
+  .menu_item h2 {
+    color: #15acff;
+    margin-bottom: 10px;
+  }
+  
+  .menu_item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu_item ul li {
+    margin-bottom: 8px;
+  }
+  
+  /* Animation des menus */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+/* Conteneur des cartes */
+.cardsMenu-container {
+
+    display: flex;
+    background-color: #83ffff4a;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    margin: 30px;
+  }
+  
+  /* Style des cartes */
+  .cardMenu {
+    background-color: #e8faff;
+    border-radius: 50px;
+    border-style: solid;
+    border-color: #2e2a39;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .cardMenu h2 {
+    color: #15acff;
+    margin: 10px 0;
+    padding: 0 20px;
+  }
+  
+  .cardMenu ul {
+    list-style: none;
+    padding: 0 20px;
+    margin: 0 0 20px 0;
+  }
+  
+  .cardMenu ul li {
+    margin-bottom: 10px;
+    color: #2e2a39;
+  }
+  
+  .cardMenu p {
+    margin: 5px 20px;
+    font-weight: bold;
+    color: red;
+  }
+  
+  /* Section pour l'image */
+  .cardMenu_image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+  }
+  
+  .cardMenu_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Animation de survol */
+  .cardMenu:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Animation de l'apparition */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+.phrase-presentation-menu{
+
+    text-align: center;
+    margin: 20px;
+    font-size: xx-large;
+    background-color: #83feff;
+    border-radius: 20px;
+    color: #2e2a39;
+}  
+
 
 
 

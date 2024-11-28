@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="DWWM-ECF1-Ayman.css">
+    <link rel="stylesheet" href="css/DWWM-ECF1-Ayman.min.css">
     <script type="module" src="DWWM-ECF1-Ayman.js"></script> 
     <title>Accueil</title>
 </head>
@@ -14,12 +14,16 @@
     </header> 
 
     <nav class="navbar">
-        <ul>
-            <li><a href="DWWM-ECF1-Ayman-accueil.html">Accueil</a></li>
-            <li><a href="DWWM-ECF1-Ayman-concert.html">Concerts</a></li>
-            <li><a href="DWWM-ECF1-Ayman-services.html">Services</a></li>
+        <div class="burger-menu" id="burgerMenu">
+          ☰
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="DWWM-ECF1-Ayman-accueil.html">Accueil</a></li>
+          <li><a href="DWWM-ECF1-Ayman-concert.html">Concerts</a></li>
+          <li><a href="DWWM-ECF1-Ayman-services.html">Services</a></li>
         </ul>
-    </nav>
+      </nav>
+      
 
     <h1>ACCUEIL</h1>
 
@@ -30,7 +34,6 @@
         <h2>DU 15/06/25 AU 17/06/25</h2>
         <img class="image_affiche-concert" src="images/festival-techno-la-teste.jpg" alt="affiche-festival">
         <div class="affiche-concert_container">
-            div class="player-container">
       <!-- Audio player -->
       <audio id="audioPlayer" preload="auto" loop>
         <source src="ressources/loop.mp3" type="audio/mp3" />
@@ -39,6 +42,14 @@
 
       <!-- Play button -->
       <button id="playButton">▶</button>
+      <div class="music-bars" id="musicBars">
+        <!-- Barres représentant l'animation -->
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
     </div>
             
 
