@@ -781,6 +781,15 @@ button.buy-btn:hover {
     color: #2e2a39;
 }  
 
+.interdictions{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
 
 
 
